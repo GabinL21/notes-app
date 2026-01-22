@@ -1,6 +1,6 @@
 # Notes API
 
-A simple Spring Boot REST API for managing notes.
+A Spring Boot REST API for managing notes.
 
 ## Running the Application
 

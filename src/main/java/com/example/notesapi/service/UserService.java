@@ -50,4 +50,10 @@ public class UserService implements UserDetailsService {
         User user = users.get(username);
         return user != null ? user.getId() : null;
     }
+
+    public Optional<User> findById(Long id) {
+        return users.values().stream()
+                .filter(user -> user.getId().equals(id))
+                .findFirst();
+    }
 }

@@ -5,7 +5,6 @@ A simple Spring Boot REST API for managing notes.
 ## Running the Application
 
 ```bash
-cd benchmark/notes-api
 mvn spring-boot:run
 ```
 

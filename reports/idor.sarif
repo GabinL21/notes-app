@@ -1,0 +1,70 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "analysis-agent",
+          "rules": [
+            {
+              "id": "VULN",
+              "name": "Security Vulnerability",
+              "shortDescription": {
+                "text": "Security vulnerability detected"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "VULN",
+          "level": "warning",
+          "message": {
+            "text": "IDOR vulnerability: the Authentication parameter is accepted but never used. Any authenticated user can supply an arbitrary numeric ID to retrieve any other user's profile (id, username, role) without any ownership or authorization check. Sequential integer IDs make full user enumeration trivial."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/com/example/notesapi/controller/UserController.java"
+                },
+                "region": {
+                  "startLine": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "endpoint": "GET /api/users/{id}"
+          }
+        }
+      ],
+      "properties": {
+        "analysisParameters": {
+          "projectPath": "/Users/gabin.laigle/IdeaProjects/notes-app",
+          "agent": "claude-code",
+          "model": "claude-sonnet-4-6",
+          "mcpTools": null,
+          "thinkingTokens": 32000,
+          "temperature": 1.0,
+          "timestamp": "2026-02-18T08:18:45.594370+00:00",
+          "phases": [
+            {
+              "name": "analysis",
+              "prompt": "idor"
+            }
+          ]
+        },
+        "analysisMetrics": {
+          "durationSeconds": 76.624,
+          "durationApiSeconds": 84.857,
+          "totalCostUsd": 0.17291235,
+          "inputTokens": 6,
+          "outputTokens": 1758
+        }
+      }
+    }
+  ]
+}

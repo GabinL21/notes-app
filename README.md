@@ -1,7 +1,5 @@
 # Notes API
 
-A Spring Boot REST API for managing notes.
-
 ## Running the Application
 
 ```bash

@@ -6,7 +6,7 @@
 mvn spring-boot:run
 ```
 
-The application starts on `http://localhost:8080`.
+The application quickly starts on `http://localhost:8080`.
 
 ## API Endpoints
 
